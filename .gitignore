@@ -1,0 +1,10 @@
+.gradle/
+build/
+local.properties
+.kotlin/
+*.jks
+*.keystore
+keystore.properties
+기획서*.docx
+demo/prototype_demo_raw.mp4
+.DS_Store
