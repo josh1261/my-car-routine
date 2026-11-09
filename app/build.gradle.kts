@@ -9,15 +9,15 @@ val signingFile = file(System.getProperty("user.home") + "/.config/my-car-routin
 val signingProps = Properties().apply { if (signingFile.exists()) signingFile.inputStream().use { load(it) } }
 
 android {
-    namespace = "io.github.mycarroutine"
+    namespace = "io.github.tanmankeum"
     compileSdk = 35
     useLibrary("android.car")
     defaultConfig {
-        applicationId = "io.github.mycarroutine"
+        applicationId = "io.github.tanmankeum"
         minSdk = 28
         targetSdk = 35
         versionCode = 1
-        versionName = "0.1"
+        versionName = "1.0"
     }
     signingConfigs {
         if (signingFile.exists()) create("release") {
@@ -45,4 +45,5 @@ dependencies {
     implementation("ai.pleos.playground:Vehicle:2.3.2")
     implementation("ai.pleos.playground:SpeechToText:3.3.1")
     implementation("ai.pleos.playground:TextToSpeech:3.3.1")
+    implementation("com.google.zxing:core:3.5.3")
 }

@@ -5,5 +5,5 @@ dependencyResolutionManagement {
         google(); mavenCentral()
     }
 }
-rootProject.name = "my-car-routine"
+rootProject.name = "tanmankeum"
 include(":app")

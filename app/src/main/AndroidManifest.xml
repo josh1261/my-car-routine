@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-feature android:name="android.hardware.type.automotive" android:required="true" />
-    <uses-permission android:name="pleos.car.permission.CAR_WINDOWS" />
-    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_WINDOWS" />
-    <uses-permission android:name="pleos.car.permission.CAR_CLIMATE" />
-    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_CLIMATE" />
-    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
-    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
-    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_LIGHTS" />
+    <!-- 읽기 권한만 사용한다. 이 앱은 차를 제어하지 않는다. -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />
     <uses-permission android:name="pleos.car.permission.CAR_SEATS" />
+    <uses-permission android:name="pleos.car.permission.CAR_INFO" />
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+    <uses-permission android:name="android.car.permission.CAR_MILEAGE" />
+    <uses-permission android:name="android.car.permission.CAR_ENERGY" />
+    <uses-permission android:name="android.car.permission.CAR_INFO" />
     <uses-permission android:name="pleos.car.permission.STT_SERVICE" />
     <uses-permission android:name="pleos.car.permission.TTS_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-    <application android:label="내 차 루틴" android:allowBackup="false" android:name=".RoutineApp">
+
+    <application android:label="탄만큼" android:allowBackup="false" android:name=".TripApp">
         <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:theme="@android:style/Theme.Material.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".RoutineService" android:exported="false" android:foregroundServiceType="specialUse">
-            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="vehicle_rule_automation" />
+        <service android:name=".TripService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="trip_cost_meter" />
         </service>
     </application>
 </manifest>

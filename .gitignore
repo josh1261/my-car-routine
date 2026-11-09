@@ -6,5 +6,5 @@ local.properties
 *.keystore
 keystore.properties
 기획서*.docx
-demo/prototype_demo_raw.mp4
+demo/*_raw.mp4
 .DS_Store
