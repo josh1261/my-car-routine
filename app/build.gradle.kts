@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 // 서명 키와 비밀번호는 저장소 밖에 둔다. 파일이 없으면 서명 없이 빌드된다.
-val signingFile = file(System.getProperty("user.home") + "/.config/my-car-routine/keystore.properties")
+val signingFile = file(System.getProperty("user.home") + "/.config/tanmankeum/keystore.properties")
 val signingProps = Properties().apply { if (signingFile.exists()) signingFile.inputStream().use { load(it) } }
 
 android {
